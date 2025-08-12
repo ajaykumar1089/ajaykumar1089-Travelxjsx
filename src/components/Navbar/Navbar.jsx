@@ -2,8 +2,8 @@
 import React from 'react';
 import "./Navbar.css";
 
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 import Home from "../../components/Home/Home"
 import Jointravellersgroup from "../../components/Jointravellersgroup/Jointravellersgroup"
@@ -29,7 +29,7 @@ function App() {
         <a href="#">🎫 Tickets</a>
         <a href="#">📞 Contact Us</a>
       </div>
-      <Router className="navbar">
+      {/* <Router className="navbar">
         <div>
           <nav>
             <Link to="/">
@@ -43,23 +43,23 @@ function App() {
               </form>
             </div>
             <div className='nav-buttons' >
-              {/* <Link to="/DigitalNomads">Digital Nomads</Link>
+              <Link to="/DigitalNomads">Digital Nomads</Link>
               <Link to="/Jointravellersgroup">Join travellers group</Link>
               <Link to="/Stories">Stories</Link>
              
-              <Link to="/Login">Login</Link> */}
+              <Link to="/Login">Login</Link>
             </div>
           </nav>
-          {/* <Routes>
+          <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/DigitalNomads" element={<DigitalNomads />} />
             <Route path="/Jointravellersgroup" element={<Jointravellersgroup />} />
             <Route path="/Stories" element={<Stories />} />
             <Route path="/Login" element={<Login />} />           
-          </Routes> */}
+          </Routes>
         </div>
 
-      </Router>
+      </Router> */}
     </div>
   );
 }

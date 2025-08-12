@@ -1,6 +1,6 @@
 import React from 'react';
 import "./DigitalNomads.css";
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import DigitalNomadsJobs from "../../components/DigitalNomadsJobs/DigitalNomadsJobs"
 
 const DigitalNomads = () => {
@@ -65,12 +65,12 @@ const DigitalNomads = () => {
                     <div className="main-content">
                         <div className="tour-listing">
                             {/* <a href="DigitalNomadsJobs.html" className="nomad-job-btn">Need Digital Nomad Job? Click Here</a> */}
-                            <nav>  
+                            {/* <nav>  
                                 <Link to="/DigitalNomadsJobs">Digital Nomads Jobs</Link> 
                             </nav>
                             <Routes>
                                 <Route path="/DigitalNomadsJobs" element={<DigitalNomadsJobs />} />
-                            </Routes>
+                            </Routes> */}
                             <a href="DigitalNomadsCountriesVisaDetails.html" className="nomad-job-btn">View Countries Providing Digital Nomad Visa</a>
                         </div>
                         {/* Tour Listings */}
