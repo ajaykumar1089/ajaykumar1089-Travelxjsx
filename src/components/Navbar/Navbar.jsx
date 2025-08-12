@@ -43,20 +43,20 @@ function App() {
               </form>
             </div>
             <div className='nav-buttons' >
-              <Link to="/DigitalNomads">Digital Nomads</Link>
+              {/* <Link to="/DigitalNomads">Digital Nomads</Link>
               <Link to="/Jointravellersgroup">Join travellers group</Link>
               <Link to="/Stories">Stories</Link>
              
-              <Link to="/Login">Login</Link>
+              <Link to="/Login">Login</Link> */}
             </div>
           </nav>
-          <Routes>
+          {/* <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/DigitalNomads" element={<DigitalNomads />} />
             <Route path="/Jointravellersgroup" element={<Jointravellersgroup />} />
             <Route path="/Stories" element={<Stories />} />
             <Route path="/Login" element={<Login />} />           
-          </Routes>
+          </Routes> */}
         </div>
 
       </Router>
