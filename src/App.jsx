@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from "./components/Navbar/Navbar.jsx"
-import Footer from "./components/Footer/Footer.jsx"
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer"
 import "./App.css"
 
 function App() {
@@ -8,6 +8,7 @@ function App() {
     <div>
     <Navbar /> 
     <Footer />     
+
     </div>
   );
 }

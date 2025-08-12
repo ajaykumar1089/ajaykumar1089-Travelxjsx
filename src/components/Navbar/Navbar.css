@@ -1,0 +1,98 @@
+
+    .side-menu {
+      width: 250px;
+      background: #0d6efd;
+      color: white;
+      position: fixed;
+      top: 0;
+      left: -250px;
+      height: 100%;
+      transition: all 0.3ss;
+      z-index: 999;
+      padding-top: 60px;
+    }
+
+    .side-menu.active {
+      left: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      color: white;
+      padding: 15px 20px;
+      text-decoration: none;
+    }
+
+    .side-menu a:hover {
+      background: #084298;
+    }
+
+    .menu-toggle {
+      cursor: pointer;
+      position: absolute;
+      left: 5px;
+      top: 87px;
+      font-size: 20px;
+      color: darkblue;
+      z-index: 1001;
+    }
+    .navbar {
+      padding: '10px 20px';
+      background-color: #0077b6;
+      display: flex;
+      justify-content: space-between;
+      align-items: "center";
+      padding-top: "50px";
+    }
+    nav {
+      display: flex;
+      gap: 20px;
+      background-color: #0077b6;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      padding: 2px 12px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+      padding-top: 40px;
+      padding-left: 250px;
+    }
+
+    .nav-buttons a {
+      background: white;
+      color: #0077b6;
+      padding: 5px 16px;
+      text-decoration: none;
+      border-radius: 20px;
+      /* font-weight: 600; */
+      padding-top: 8px;
+      height: 40px;
+    }
+
+    .nav-buttons a:hover {
+      background: #caf0f8;
+    }
+
+    .search-box {
+      text-align: center;
+      margin-top: 50px;
+      margin-left: 50px;
+    }
+
+    .search-box input {
+      width: 110%;
+
+      font-size: 16px;
+    }
