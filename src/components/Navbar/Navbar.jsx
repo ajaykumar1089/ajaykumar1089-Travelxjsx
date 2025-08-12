@@ -5,12 +5,12 @@ import "./Navbar.css";
 // import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
-import Home from "../../components/Home/Home"
-import Jointravellersgroup from "../../components/Jointravellersgroup/Jointravellersgroup"
-import DigitalNomads from "../../components/DigitalNomads/DigitalNomads"
-import Stories from "../../components/Stories/Stories"
+// import Home from "../../components/Home/Home"
+// import Jointravellersgroup from "../../components/Jointravellersgroup/Jointravellersgroup"
+// import DigitalNomads from "../../components/DigitalNomads/DigitalNomads"
+// import Stories from "../../components/Stories/Stories"
 
-import Login from "../../components/AuthService/Login"
+// import Login from "../../components/AuthService/Login"
 
 const toggleMenu = () => {
   document.getElementById("sideMenu").classList.toggle("active");
