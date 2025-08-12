@@ -16,11 +16,11 @@ function Footer() {
           <div style={{flex: 1, minWidth: '200px'}}>
             <h3 style={{color: 'white'}}>Quick Links</h3>
             <ul style={{listStyle: 'none', padding: 0}}>
-              <li><a  style={{color: '#ddd', textDecoration: 'none'}}>Home</a></li>
-              <li><a  style={{color: '#ddd', textDecoration: 'none'}}>Destinations</a></li>
-              <li><a  style={{color: '#ddd', textDecoration: 'none'}}>Hotels</a></li>
-              <li><a  style={{color: '#ddd', textDecoration: 'none'}}>Flights</a></li>
-              <li><a  style={{color: '#ddd', textDecoration: 'none'}}>Contact</a></li>
+              <li><a href="./landing.html" style={{color: '#ddd', textDecoration: 'none'}}>Home</a></li>
+              <li><a href="./landing.html" style={{color: '#ddd', textDecoration: 'none'}}>Destinations</a></li>
+              <li><a href="./landing.html" style={{color: '#ddd', textDecoration: 'none'}}>Hotels</a></li>
+              <li><a href="./landing.html" style={{color: '#ddd', textDecoration: 'none'}}>Flights</a></li>
+              <li><a href="./landing.html" style={{color: '#ddd', textDecoration: 'none'}}>Contact</a></li>
             </ul>
           </div>
           {/* Contact Info */}
@@ -42,9 +42,9 @@ function Footer() {
         <div style={{textAlign: 'center', padding: '20px 0', borderTop: '1px solid #444', marginTop: '30px'}}>
           <p>© 2025 Traveller Clicks. All Rights Reserved.</p>
           <div style={{marginTop: '10px'}}>
-            <a style={{color: 'white', margin: '0 10px'}}>Facebook</a>
-            <a  style={{color: 'white', margin: '0 10px'}}>Instagram</a>
-            <a style={{color: 'white', margin: '0 10px'}}>Twitter</a>
+            <a href="./landing.html" style={{color: 'white', margin: '0 10px'}}>Facebook</a>
+            <a href="./landing.html" style={{color: 'white', margin: '0 10px'}}>Instagram</a>
+            <a href="./landing.html" style={{color: 'white', margin: '0 10px'}}>Twitter</a>
           </div>
         </div>
       </footer> 

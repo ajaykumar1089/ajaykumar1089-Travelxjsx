@@ -21,13 +21,13 @@ function App() {
     <div>
       <div className="menu-toggle" onClick={toggleMenu}>☰</div>
       <div id="sideMenu" className="side-menu">
-        <a >🏠 Home</a>
-        <a >🌍 Destinations</a>
-        <a >🚗 Car Rentals</a>
-        <a >🛏 Hotels</a>
-        <a >🗺 Tourist Maps</a>
-        <a >🎫 Tickets</a>
-        <a >📞 Contact Us</a>
+        <a href="./landing.html">🏠 Home</a>
+        <a href="./landing.html">🌍 Destinations</a>
+        <a href="./landing.html">🚗 Car Rentals</a>
+        <a href="./landing.html">🛏 Hotels</a>
+        <a href="./landing.html">🗺 Tourist Maps</a>
+        <a href="./landing.html">🎫 Tickets</a>
+        <a href="./landing.html">📞 Contact Us</a>
       </div>
       {/* <Router className="navbar">
         <div>
