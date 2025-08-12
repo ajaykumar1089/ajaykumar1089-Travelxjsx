@@ -2,7 +2,7 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import "./Jointravellersgroup.css"
+import "./JoinTravellersGroup.css"
 
 // Fix for missing marker icons
 delete L.Icon.Default.prototype._getIconUrl;
