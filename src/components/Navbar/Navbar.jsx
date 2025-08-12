@@ -63,7 +63,7 @@ function App() {
     </div>
   );
 }
-function createMarkup() {
-  return { __html: 'First · Second' };
-}
+// function createMarkup() {
+//   return { __html: 'First · Second' };
+// }
 export default App;
