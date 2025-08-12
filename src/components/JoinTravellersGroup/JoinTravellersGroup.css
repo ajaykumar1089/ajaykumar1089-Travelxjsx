@@ -1,0 +1,449 @@
+    .main-content {
+      margin-top: 0px;
+      padding: 0px;
+      width: 100%;
+    }
+    
+    .container {
+      max-width: 100%;
+      margin: 20px;
+      padding: 20px;
+      background: white;
+    }
+
+    footer {
+      background: #0d6efd;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-buttons {
+        margin-top: 10px;
+      }
+    }
+
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav,
+      .nav-buttons {
+        margin-top: 10px;
+        flex-wrap: wrap;
+      }
+    }
+
+    .booking-form {
+      background: #fff;
+      /* padding: 20px; */
+      /* max-width: 600px; */
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .trip-type {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+    }
+
+    .submit-btn {
+      background: #007bff;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 25%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #0056b3;
+    }
+
+
+
+    .places {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .place-card {
+      width: auto;
+      background: #f1f1f1;
+      padding: 15px;
+      text-align: center;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+
+    .place-card h3 {
+      font: 1em sans-serif;
+    }
+
+    .place-card:hover {
+      transform: scale(1.05);
+    }
+
+    .place-card i {
+      font-size: 20px;
+      color: #007bff;
+      margin-bottom: 10px;
+      /* animation: bounce 2s infinite; */
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    iframe {
+      width: 98%;
+      height: 300px;
+      border: none;
+    }
+
+
+
+    /* -------slider user start--------------- */
+    .slider-containerUser {
+      position: relative;
+      width: 100%;
+      max-width: 98%;
+      overflow: hidden;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .sliderUser {
+      display: flex;
+      transition: transform 0.4s ease;
+    }
+
+    .user-box {
+      min-width: 180px;
+      border-right: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+      box-sizing: border-box;
+    }
+
+    .user-img {
+      width: 100%;
+      height: 250px;
+      border-radius: 50%;
+      position: relative;
+      margin-bottom: 5px;
+    }
+
+    .user-img::after {
+      content: '';
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      width: 12px;
+      height: 12px;
+      background: #0f0;
+      border: 2px solid #fff;
+      border-radius: 50%;
+    }
+
+    .arrowUser {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #333;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+      border-radius: 50%;
+    }
+
+    .arrowUser.left {
+      left: 2px;
+    }
+
+    .arrowUser.right {
+      right: 2px;
+    }
+
+    /* ------------ */
+
+
+
+    /* --------------------------- */
+    .traveler-slider-container {
+      width: 100%;
+      /* Adjust as needed */
+      overflow-x: auto;
+      /* Enables horizontal scrolling */
+      white-space: nowrap;
+      /* Prevents wrapping of items */
+      -webkit-overflow-scrolling: touch;
+      /* Smooth scrolling on iOS */
+      padding: 10px 0px 0px 120px;
+    }
+
+    .traveler-slider {
+      display: inline-block;
+      /* Allows horizontal arrangement */
+      white-space: nowrap;
+      /* Prevents wrapping of items within the slider */
+      /* Add other styles for the slider, e.g., spacing between items */
+    }
+
+    .traveler-item {
+      display: inline-block;
+      /* Arrange items horizontally */
+      width: 100px;
+      /* Adjust width of each item */
+      margin-right: 10px;
+      /* Spacing between items */
+      text-align: center;
+    }
+
+    .traveler-item img {
+      width: 100px;
+      /* Adjust image size */
+      height: 80px;
+      /* Adjust image size */
+      border-radius: 50%;
+      /* Make images circular */
+      object-fit: cover;
+      /* Ensure images fit within the defined size */
+    }
+
+    /* ------------------------------------------- */
+
+    .slider-container {
+      position: relative;
+      width: 98%;
+      margin: 40px auto;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      height: 600px;
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.4s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .slide img {
+      width: 100%;
+      display: block;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .cardContent{
+      padding: "20px",
+    }
+
+
+
+
+
+    
+    .reservespotcontainer {
+      max-width: 110px;
+      margin: auto;
+      padding: 1000px 20px 0px 20px;
+      background: white;
+
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section h2 {
+      border-bottom: 2px solid #007BFF;
+      padding-bottom: 10px;
+      color: #007BFF;
+    }
+
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #eef4fb;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .itinerary-day {
+      margin: 10px 0;
+    }
+
+    .leader {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .leader img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .badges {
+      margin-top: 10px;
+    }
+
+    /* ------------------------------------------------ */
+
+    #map {
+      width: 100%;
+      height: 100vh;
+    }
+
+    .popup-img {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 5px;
+    }
+
+    /* ----------------------------------------- */
+
+
+    /* ------------------------------------------------------- */
+    .fixed-box {
+      position: fixed;
+      top: 201px;
+      right: 20px;
+      width: 250px;
+      padding: 15px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    /* ------------------------------------------------------------- */
+    .badge {
+      display: inline-block;
+      background: #e1ecf4;
+      color: #007BFF;
+      padding: 4px 8px;
+      border-radius: 12px;
+      margin: 3px;
+    }
+
+    /* /* ------------------------------------------------------------------------------ */
+    .booking-box {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .booking-box h2 {
+      margin-bottom: 15px;
+      font-size: 11px;
+      color: #333;
+    }
+
+    .date-range,
+    .price {
+      margin: 10px 0;
+      font-size: 16px;
+      color: #000;
+    }
+
+    .green-glow-button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #28a745;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 20px;
+      box-shadow: 0 0 12px #28a745;
+      transition: background 0.3s;
+    }
+
+    .green-glow-button:hover {
+      background: #218838;
+    }
