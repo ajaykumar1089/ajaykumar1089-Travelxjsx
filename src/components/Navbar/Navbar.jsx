@@ -1,24 +1,45 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import "./Navbar.css";
-
+// import assets from '../../assets';
 // import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
-// import Home from "../../components/Home/Home"
-// import Jointravellersgroup from "../../components/Jointravellersgroup/Jointravellersgroup"
-// import DigitalNomads from "../../components/DigitalNomads/DigitalNomads"
-// import Stories from "../../components/Stories/Stories"
-
-// import Login from "../../components/AuthService/Login"
+import Home from "../../components/Home/Home"
+import Jointravellersgroup from "../../components/Jointravellersgroup/Jointravellersgroup"
+import DigitalNomads from "../../components/DigitalNomads/DigitalNomads"
+import Stories from "../../components/Stories/Stories"
+import Login from "../../components/AuthService/Login"
 
 const toggleMenu = () => {
   document.getElementById("sideMenu").classList.toggle("active");
 };
 
 function App() {
+
+  const [currentPage, setCurrentPage] = useState('home'); // Default to 'home'
+
+  const renderContent = () => {
+    switch (currentPage) {
+      case 'home':
+        return <Home />;
+      case 'DigitalNomads':
+        return <DigitalNomads />;
+      case 'joinTravellersGroup':
+        return <Jointravellersgroup />;
+      case 'stories':
+        return <Stories />;
+      case 'login':
+        return <Login />;
+      default:
+        return <Home />; // Fallback
+    }
+  };
+
+
   return (
     <div>
+
       <div className="menu-toggle" onClick={toggleMenu}>☰</div>
       <div id="sideMenu" className="side-menu">
         <a href="./landing.html">🏠 Home</a>
@@ -60,6 +81,37 @@ function App() {
         </div>
 
       </Router> */}
+
+      <header>
+        <nav>
+          {/* <ul>
+              <li><button onClick={() => setCurrentPage('home')}>Home</button></li>
+              <li><button onClick={() => setCurrentPage('DigitalNomads')}>Digital Nomads</button></li>
+              <li><button onClick={() => setCurrentPage('joinTravellersGroup')}>Join Travellers Group</button></li>
+            </ul> */}
+
+          
+            <div className="d-flex align-items-center">
+              <a href='./landing.html' onClick={() => setCurrentPage('home')}><img src={require('../../assets/logo_travellerclicks - Copy.png')} width="85" alt="logo" /></a>
+            </div>
+            <div className="search-box">
+              <input type="text" placeholder="Search destinations, hotels..." />
+            </div>
+            <div class="nav-buttons">
+              <a href='./landing.html' onClick={() => setCurrentPage('joinTravellersGroup')}>Join Travellers Group</a>
+              <a href='./landing.html' onClick={() => setCurrentPage('stories')}>Stories</a>
+              <a href='./landing.html' onClick={() => setCurrentPage('DigitalNomads')}>Digital Nomads</a>
+              <a href='./landing.html' onClick={() => setCurrentPage('login')} className="btn btn-primary btn-sm">Login</a>
+            </div>
+    
+
+        </nav>
+      </header>
+      <main>
+        {renderContent()}
+      </main>
+
+
     </div>
   );
 }

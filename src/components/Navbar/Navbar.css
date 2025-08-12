@@ -36,25 +36,23 @@
       color: darkblue;
       z-index: 1001;
     }
-    .navbar {
-      padding: '10px 20px';
+      header {
+      padding: 10px 20px;
       background-color: #0077b6;
       display: flex;
       justify-content: space-between;
-      align-items: "center";
-      padding-top: "50px";
+      align-items: center;
     }
-    nav {
+       nav {
       display: flex;
       gap: 20px;
-      background-color: #0077b6;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-size: 16px;
-      padding: 2px 12px;
+      padding: 6px 12px;
       transition: background 0.3s;
     }
 
@@ -66,19 +64,18 @@
     .nav-buttons {
       display: flex;
       gap: 10px;
-      padding-top: 40px;
-      padding-left: 250px;
+      padding: 40px;
+    padding-left: 212px;
     }
 
     .nav-buttons a {
       background: white;
       color: #0077b6;
-      padding: 5px 16px;
+      padding: 8px 16px;
       text-decoration: none;
       border-radius: 20px;
-      /* font-weight: 600; */
-      padding-top: 8px;
-      height: 40px;
+      font-weight: 600;
+      height: 50px;
     }
 
     .nav-buttons a:hover {
@@ -87,8 +84,8 @@
 
     .search-box {
       text-align: center;
-      margin-top: 50px;
-      margin-left: 50px;
+      margin: 20px;
+      padding: 30px;
     }
 
     .search-box input {
@@ -96,3 +93,4 @@
 
       font-size: 16px;
     }
+
