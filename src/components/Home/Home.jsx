@@ -199,7 +199,7 @@ const Home = () => {
                     <div className="profile-location">Tokyo, Japan<div className="nav-buttons"><a href='./landing.html'> View Story</a></div>
                     </div>
                   </div>
-
+                  
                 </div>
                 <div className="user-box">
                   <div className="user-img" >
