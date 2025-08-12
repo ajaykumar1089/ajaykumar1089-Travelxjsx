@@ -6,7 +6,7 @@ import "./Navbar.css";
 // import { useNavigate } from 'react-router-dom';
 
 import Home from "../../components/Home/Home"
-import Jointravellersgroup from "../../components/Jointravellersgroup/Jointravellersgroup"
+import Jointravellersgroup from "../../components/JoinTravellersGroup/JoinTravellersGroup"
 import DigitalNomads from "../../components/DigitalNomads/DigitalNomads"
 import Stories from "../../components/Stories/Stories"
 import Login from "../../components/AuthService/Login"
