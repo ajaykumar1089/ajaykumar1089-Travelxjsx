@@ -6,10 +6,10 @@ import "./Navbar.css";
 // import { useNavigate } from 'react-router-dom';
 
 import Home from "../../components/Home/Home"
-import Jointravellersgroup from "../../components/Jointravellersgroup/Jointravellersgroup"
-import DigitalNomads from "../../components/DigitalNomads/DigitalNomads"
-import Stories from "../../components/Stories/Stories"
-import Login from "../../components/AuthService/Login"
+// import Jointravellersgroup from "../../components/Jointravellersgroup/Jointravellersgroup"
+// import DigitalNomads from "../../components/DigitalNomads/DigitalNomads"
+// import Stories from "../../components/Stories/Stories"
+// import Login from "../../components/AuthService/Login"
 
 const toggleMenu = () => {
   document.getElementById("sideMenu").classList.toggle("active");
@@ -23,14 +23,14 @@ function App() {
     switch (currentPage) {
       case 'home':
         return <Home />;
-      case 'DigitalNomads':
-        return <DigitalNomads />;
-      case 'joinTravellersGroup':
-        return <Jointravellersgroup />;
-      case 'stories':
-        return <Stories />;
-      case 'login':
-        return <Login />;
+      // case 'DigitalNomads':
+      //   return <DigitalNomads />;
+      // case 'joinTravellersGroup':
+      //   return <Jointravellersgroup />;
+      // case 'stories':
+      //   return <Stories />;
+      // case 'login':
+      //   return <Login />;
       default:
         return <Home />; // Fallback
     }
@@ -102,8 +102,7 @@ function App() {
               <a href='./landing.html' onClick={() => setCurrentPage('stories')}>Stories</a>
               <a href='./landing.html' onClick={() => setCurrentPage('DigitalNomads')}>Digital Nomads</a>
               <a href='./landing.html' onClick={() => setCurrentPage('login')} className="btn btn-primary btn-sm">Login</a>
-            </div>
-    
+            </div>   
 
         </nav>
       </header>
