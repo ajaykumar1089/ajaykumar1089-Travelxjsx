@@ -103,7 +103,7 @@
 
     .place-card {
       width: auto;
-      background: #f1f1f1;
+      background: transparent;
       padding: 15px;
       text-align: center;
       border-radius: 8px;
