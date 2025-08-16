@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./StatusCircle.css";
+import "./Status.css";
 
 /**
  * Sample stories data
@@ -36,15 +36,23 @@ const STORIES = [
     ],
   },
 ];
-const StatusCircle = () => {
+
+/**
+ * Main App
+ */
+const App = () => {
   return (
-    <div className="app">  
-     <StoryList stories={STORIES} />
+    <div className="app">     
+      <StoryList stories={STORIES} />
     </div>
   );
 };
-export default StatusCircle;
 
+export default App;
+
+/**
+ * Story List (grid of circular avatars)
+ */
 const StoryList = ({ stories }) => {
   const [viewer, setViewer] = useState({
     open: false,
@@ -118,6 +126,9 @@ const StoryList = ({ stories }) => {
   );
 };
 
+/**
+ * Full-screen viewer with segmented progress and controls
+ */
 const StoryViewer = ({ stories, viewer, setViewer, onFinish }) => {
   const { storyIndex, itemIndex, progress, paused } = viewer;
   const story = stories[storyIndex];

@@ -1,0 +1,21 @@
+.status-container {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.status-bar {
+  flex: 1;
+  height: 6px;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.status-progress {
+  height: 100%;
+  background: #4caf50; /* green fill */
+  transition: width 0.05s linear;
+}

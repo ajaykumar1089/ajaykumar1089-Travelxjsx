@@ -70,7 +70,7 @@ const DigitalNomads = () => {
                     {/* Main Content */}
                     <div className="main-content">
                         <div className="tour-listing">
-                            <a onClick={() => goToDetails()} className="nomad-job-btn">Need Digital Nomad Job? Click Here</a>                            
+                            <a  href="/" onClick={() => goToDetails()} className="nomad-job-btn">Need Digital Nomad Job? Click Here</a>                            
                             
                             <a href="/" className="nomad-job-btn">View Countries Providing Digital Nomad Visa</a>
                         </div>
