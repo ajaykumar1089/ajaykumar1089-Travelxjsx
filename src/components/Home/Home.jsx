@@ -8,18 +8,18 @@ const Home = () => {
     // This function will be called when the component mounts
     console.log('Fetching data on component load...');
     // Perform data fetching or other side effects here
-    setSelected(0);
+    setActive(1); // Set initial active button
   };
 
   useEffect(() => {
     fetchData(); // Call the function inside useEffect
   }, []); // Empty dependency array ensures it runs only once on mount
 
-  const handleRedirect = () => {
-    window.location.href = '/dashboard'; // Redirects to the /dashboard path
-  };
+  // const handleRedirect = () => {
+  //   window.location.href = '/dashboard'; // Redirects to the /dashboard path
+  // };
 
-  const [selected, setSelected] = useState(null);
+  
   const buttons = [
     { id: 1, label: "Campervan Rentals", icon: "fas fa-shuttle-van" },
     { id: 2, label: "Vehical - Rentals", icon: "fas fa-car" },
@@ -33,12 +33,7 @@ const Home = () => {
 
 
 
-  const scrollToDeals = () => {
-    const dealsSection = document.getElementById("deals-section");
-    if (dealsSection) {
-      dealsSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+ 
 
 const dealsData = [
   {
@@ -163,28 +158,39 @@ const totalSeconds = dealsData.map(d => d.expiresInHours * 3600);
               </ul>
             </div> */}
 
-            <div id="deals-section" className="best-deals-container">
-              <h2>Today's Best Travel Deals</h2>
-              <div className="deals-grid">
-                {dealsData.map((deal, index) => (
-                
+           <div id="deals-section" className="best-deals-container">
+      <h2>Today's Best Travel Deals</h2>
+      <div className="deals-grid">
+        {dealsData.map((deal, index) => {
+          const percentLeft = (timers[index] / totalSeconds[index]) * 100;
+          return (
+            <div
+              className="deal-card"
+              key={deal.id}
+              onClick={() => goToDetails(deal.link)} >
+              <img src={deal.image} alt={deal.title} />
+              <div className="deal-info">
+                <h3>{deal.title}</h3>
+                <p>{deal.description}</p>
+                <span className="deal-price">{deal.price}</span>
+                <div className="deal-timer">
+                  ⏳ {timers[index] > 0 ? `${formatTime(timers[index])} left` : "Expired"}
+                </div>
+                <div className="deal-progress">
                   <div
-                    className="deal-card"
-                    key={deal.id}
-                    onClick={() => goToDetails(deal.link)}>
-                    <img src={deal.image} alt={deal.title} />
-                    <div className="deal-info">
-                      <h3>{deal.title}</h3>
-                      <p>{deal.description}</p>
-                      <span className="deal-price">{deal.price}</span>
-                      <div className="deal-timer">
-                ⏳ {timers[index] > 0 ? `${formatTime(timers[index])} left` : "Expired"}
-              </div>
-                    </div>
-                  </div>
-                ))}
+                    className="deal-progress-bar"
+                    style={{
+                      width: `${percentLeft}%`,
+                      backgroundColor: getProgressColor(percentLeft)
+                    }}
+                  ></div>
+                </div>
               </div>
             </div>
+          );
+        })}
+      </div>
+    </div>
 
           </div>
         </main>

@@ -9,9 +9,6 @@ import Stories from "../../components/Stories/Status&Stories"
 import Login from "../../components/AuthService/Login"
 import ServiceProviderLogin from "../../components/ServiceProviderLogin/ServiceProviderLogin"
 
-const toggleMenu = () => {
-  document.getElementById("sideMenu").classList.toggle("active");
-};
 
 function App() {
 
@@ -42,9 +39,9 @@ function App() {
      
        <header className="site-header" role="banner">
         <nav className="nav" aria-label="Primary">
-          <a className="brand" href="#" aria-label="NomadeusAI Home">
+          <a  href='/' className="brand"  aria-label="NomadeusAI Home">
           
-            <a onClick={() => setCurrentPage('home')}>
+            <a href='/' onClick={() => setCurrentPage('home')}>
                 <img src={require('../../assets/logo_travellerclicks_90x110_trans.png')} alt="logo" />
            </a>
 

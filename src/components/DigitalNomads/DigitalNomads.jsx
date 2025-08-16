@@ -1,9 +1,15 @@
 import React from 'react';
 import "./DigitalNomads.css";
-// import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
 // import DigitalNomadsJobs from "../../components/DigitalNomadsJobs/DigitalNomadsJobs"
 
 const DigitalNomads = () => {
+
+ const goToDetails = () => {
+    alert('dd')
+    window.location.href = "../../components/DigitalNomadsJobs/DigitalNomadsJobs"; // redirect to details page
+  };
+
     return (
         <div>
             <main>
@@ -64,14 +70,9 @@ const DigitalNomads = () => {
                     {/* Main Content */}
                     <div className="main-content">
                         <div className="tour-listing">
-                            {/* <a href="DigitalNomadsJobs.html" className="nomad-job-btn">Need Digital Nomad Job? Click Here</a> */}
-                            {/* <nav>  
-                                <Link to="/DigitalNomadsJobs">Digital Nomads Jobs</Link> 
-                            </nav>
-                            <Routes>
-                                <Route path="/DigitalNomadsJobs" element={<DigitalNomadsJobs />} />
-                            </Routes> */}
-                            <a href="DigitalNomadsCountriesVisaDetails.html" className="nomad-job-btn">View Countries Providing Digital Nomad Visa</a>
+                            <a onClick={() => goToDetails()} className="nomad-job-btn">Need Digital Nomad Job? Click Here</a>                            
+                            
+                            <a href="/" className="nomad-job-btn">View Countries Providing Digital Nomad Visa</a>
                         </div>
                         {/* Tour Listings */}
                         <div className="tour-listing">

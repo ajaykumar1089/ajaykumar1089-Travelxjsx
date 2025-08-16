@@ -5,26 +5,28 @@ const StatusViewer = ({ statuses, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [progress, setProgress] = useState(0);
   const intervalRef = useRef(null);
+  const [currentPage, setCurrentPage] = useState('home'); // Default to 'home'
 
   useEffect(() => {
     startTimer();
-
+    const startTimer = () => {
+      setProgress(0);
+      clearInterval(intervalRef.current);
+      intervalRef.current = setInterval(() => {
+        setProgress((prev) => {
+          if (prev >= 100) {
+            handleNext();
+            return 0;
+          }
+          return prev + 2;
+        });
+      }, 100); // 5 seconds total
+    };
     return () => clearInterval(intervalRef.current);
   }, [currentIndex]);
 
-  const startTimer = () => {
-    setProgress(0);
-    clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(() => {
-      setProgress((prev) => {
-        if (prev >= 100) {
-          handleNext();
-          return 0;
-        }
-        return prev + 2;
-      });
-    }, 100); // 5 seconds total
-  };
+
+
 
   const handleNext = () => {
     if (currentIndex < statuses.length - 1) {
@@ -53,8 +55,8 @@ const StatusViewer = ({ statuses, onClose }) => {
                   idx < currentIndex
                     ? "100%"
                     : idx === currentIndex
-                    ? `${progress}%`
-                    : "0%",
+                      ? `${progress}%`
+                      : "0%",
               }}
             ></div>
           </div>
