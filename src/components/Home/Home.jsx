@@ -102,7 +102,7 @@ const totalSeconds = dealsData.map(d => d.expiresInHours * 3600);
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
       </div>
       <div>
-        <main>
+      
           <div className="travel-icon-buttons-container">
             {buttons.map((btn) => (
               <button
@@ -193,7 +193,7 @@ const totalSeconds = dealsData.map(d => d.expiresInHours * 3600);
     </div>
 
           </div>
-        </main>
+       
       </div>
     </>
   );

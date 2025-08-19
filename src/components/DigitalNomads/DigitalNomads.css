@@ -1,162 +1,172 @@
-    .main-contenttop {
-      margin-top: 0px;
-      padding: 0px;
-      width: 100%;
-    }
-    
-    .container {
-      max-width: 100%;
+/* ===== HomestayMap.css ===== */
+
+/* Container */
+.homestay-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+/* ===== Compact Filter Box ===== */
+.compact-filter-box {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+/* Main filters row */
+.main-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+  min-width: 130px;
+  flex: 1;
+}
+
+.filter-item label {
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.filter-item input[type="date"],
+.filter-item input[type="number"],
+.filter-item select {
+  padding: 7px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+  transition: border 0.2s;
+}
+
+/* -------------------------------- */
+.search-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+.search-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.search-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0077cc;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #005fa3;
+}
+
+
+/* ------------------ */
+body {
+      font-family: Arial, sans-serif;
       margin: 20px;
-      padding: 20px;
-      background: white;
+      background: #f8f9fa;
     }
-.page-container {
 
-
+    .filter-bar {
       display: flex;
-      max-width: 90%;
-      margin: 20px;
-      padding: 20px;
-      background: white;     
-  
-    }
-     /* Sidebar */
-    .sidebar {
-      width: 300px;
-      background: #fff;
-      padding: 20px;
+      flex-wrap: wrap;
+      background-color: #fff;
+      padding: 15px 20px;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      margin-right: 20px;
-      flex-shrink: 0;
-    }
-
-    .sidebar h3 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #ddd;
-      padding-bottom: 5px;
-      color: #004080;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      gap: 15px;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .filter-group {
-      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-width: 150px;
     }
 
     .filter-group label {
-      display: block;
-      margin: 5px 0;
-      font-size: 0.95rem;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #555;
     }
 
     .filter-group input,
     .filter-group select {
-      width: 100%;
-      padding: 6px 8px;
-      font-size: 0.95rem;
-      margin-top: 5px;
-      border-radius: 4px;
+      padding: 8px;
+      font-size: 14px;
       border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
-    .checkbox-group label {
-      display: block;
-      margin: 4px 0;
-      font-size: 0.9rem;
+    .price-range {
+      display: flex;
+      gap: 10px;
     }
 
-    .checkbox-group input[type="checkbox"] {
-      margin-right: 6px;
-    }
-
-    .search-btn {
-      width: 100%;
-      background: #004080;
+    .filter-btn {
+      padding: 10px 20px;
+      background-color: #007bff;
       color: white;
       border: none;
-      padding: 10px;
-      font-size: 1rem;
       border-radius: 4px;
       cursor: pointer;
-      transition: background 0.3s;
+      align-self: flex-end;
+      transition: background-color 0.3s;
     }
 
-    .search-btn:hover {
-      background: #003366;
+    .filter-btn:hover {
+      background-color: #0056b3;
     }
 
-    /* Main content */
-    .main-content {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      padding-top: 0px;
+    @media (max-width: 600px) {
+      .filter-bar {
+        flex-direction: column;
+      }
+      .filter-btn {
+        width: 100%;
+      }
     }
-
-    .tour-listing {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-
-    .tour-card {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.08);
-      transition: transform 0.2s;
-    }
-
-    .tour-card:hover {
-      transform: translateY(-4px);
-    }
-
-    .tour-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .tour-card .info {
-      padding: 15px;
-    }
-
-    .tour-card h4 {
-      margin: 0;
-      color: #004080;
-      font-size: 1.1rem;
-    }
-
-    .tour-card .meta {
-      font-size: 0.9rem;
-      margin: 6px 0;
-      color: #555;
-    }
-
-    .tour-card .price {
-      font-weight: bold;
-      color: #222;
-    }
-
-    /* ---------------------------------- */
-    .nomad-job-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: white;
-      padding: 14px 24px;
-      font-size: 16px;
-      font-weight: bold;
-      border: none;
-      border-radius: 8px;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0, 114, 255, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .nomad-job-btn:hover {
-      background: linear-gradient(135deg, #0072ff, #00c6ff);
-      transform: scale(1.05);
-      box-shadow: 0 6px 15px rgba(0, 114, 255, 0.4);
-    }
-
-    /* ---------------------------------- */
