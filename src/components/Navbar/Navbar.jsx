@@ -29,7 +29,7 @@ export default function App() {
             <span />
           </button>
           <Router>
-            <div>
+            
               <nav className={`nav ${menuOpen ? "nav-open" : ""}`}>
                 {/* Mobile Search inside menu */}
               
@@ -53,7 +53,7 @@ export default function App() {
                 <Route path="/DigitalNomads" element={<DigitalNomads />} />
                 <Route path="/Login" element={<Login />} />
               </Routes>
-            </div>
+           
           </Router>
         </div>
       </header>
