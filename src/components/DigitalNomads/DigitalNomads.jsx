@@ -1,256 +1,363 @@
-import React from 'react';
-import "./DigitalNomads.css";
+//latest working
+import { useEffect, useState, useRef } from "react";
+import {
+  MapContainer,
+  TileLayer,
+  Marker,
+  Popup,
+  useMap,
+} from "react-leaflet";
+import L from "leaflet";
+import Papa from "papaparse";
+import "leaflet/dist/leaflet.css";
+import "leaflet-ant-path";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import "./DigitalNomads.css"
 
-// import DigitalNomadsJobs from "../../components/DigitalNomadsJobs/DigitalNomadsJobs"
 
-const DigitalNomads = () => {
+//import "rc-slider/assets/index.css";
 
- const goToDetails = () => {
-    alert('dd')
-    window.location.href = "../../components/DigitalNomadsJobs/DigitalNomadsJobs"; // redirect to details page
-  };
-
-    return (
-        <div>
-            <main>
-                <div className="page-container">
-                    {/* Sidebar Filters */}
-                    <aside className="sidebar">
-                        <div className="filter-group">
-                            <label>Destination(Digital Nomad)</label>
-                            <input type="text" placeholder="e.g. Berlin" />
-                        </div>
-                        <button className="search-btn">Search</button>
-                        <h3>Filter Tours</h3>
-                        <div className="filter-group">
-                            <label htmlFor="duration">Duration</label>
-                            <select id="duration">
-                                <option>Any</option>
-                                <option>1–3 Days</option>
-                                <option>4–7 Days</option>
-                                <option>8–14 Days</option>
-                                <option>15+ Days</option>
-                            </select>
-                        </div>
-                        <div className="filter-group">
-                            <label htmlFor="departure">Departure Month</label>
-                            <select id="departure">
-                                <option>Any</option>
-                                <option>August 2025</option>
-                                <option>September 2025</option>
-                            </select>
-                        </div>
-                        <div className="filter-group">
-                            <label>Price (USD)</label>
-                            <input type="number" placeholder="Min" />
-                            <input type="number" placeholder="Max" style={{ marginTop: '8px' }} />
-                        </div>
-                        <div className="filter-group">
-                            <label htmlFor="age">Age Group</label>
-                            <select>
-                                <option>Any</option>
-                                <option>18–30</option>
-                                <option>30–50</option>
-                                <option>50+</option>
-                            </select>
-                        </div>
-                        <div className="filter-group checkbox-group">
-                            <label>Activities</label>
-                            <label><input type="checkbox" /> Hiking</label>
-                            <label><input type="checkbox" /> Sightseeing</label>
-                            <label><input type="checkbox" /> Wine Tasting</label>
-                        </div>
-                        <div className="filter-group checkbox-group">
-                            <label>Accommodation</label>
-                            <label><input type="checkbox" /> Budget</label>
-                            <label><input type="checkbox" /> Medium</label>
-                            <label><input type="checkbox" /> Premium</label>
-                        </div>
-                    </aside>
-                    {/* Main Content */}
-                    <div className="main-content">
-                        <div className="tour-listing">
-                            <a  href="/" onClick={() => goToDetails()} className="nomad-job-btn">Need Digital Nomad Job? Click Here</a>                            
-                            
-                            <a href="/" className="nomad-job-btn">View Countries Providing Digital Nomad Visa</a>
-                        </div>
-                        {/* Tour Listings */}
-                        <div className="tour-listing">
-                            <div className="tour-card">
-                                <div className="about-text">
-                                    <h2>About Digital Nomads</h2>
-                                    <p>Digital Nomads are remote professionals who travel the world while working online. They choose freedom
-                                        over routine and often work from beaches, mountains, cafés, or co-working spaces. All they need is a
-                                        stable internet connection and a passion for adventure.</p>
-                                    <ul className="nomad-benefits">
-                                        <li>🌐 Work from anywhere in the world</li>
-                                        <li>💻 Flexible jobs, remote teams, and passive income</li>
-                                        <li>🏡 Stay in unique homestays or co-living spaces</li>
-                                        <li>✈️ Travel while you earn</li>
-                                        <li>👥 Join global digital nomad communities</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="tour-listing">
-                            <div className="tour-card">
-                                <a href="JoinTravellersGroup.html">
-                                    <img src="https://picsum.photos/id/1015/600/400" alt="Tour 1" />
-                                    <div className="info">
-                                        <h4>Best of Germany Tour</h4>
-                                        <div className="meta">12 Days · Max 30 People</div>
-                                        <div className="price">From $2,540</div>
-                                    </div>
-                                    <section className="map-list-section">
-                                        <div className="map-container">
-                                            <iframe  title="goog"  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3738026319794!2d144.95743221570534!3d-37.816382979751504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5772c6335123bc1!2sFederation+Square!5e0!3m2!1sen!2sau!4v1510919093301" allowFullScreen>
-                                            </iframe>
-                                        </div>
-                                        <div className="tour-list">
-                                            <ul>
-                                                <li><strong>Europe Highlights</strong><br />Berlin → Dresden → Munich → Frankfurt</li>
-                                                <li><strong>Best of Germany</strong><br />Berlin → Hamburg → Cologne → Rothenburg</li>
-                                                <li><strong>Bavarian Alps Adventure</strong><br />Munich → Füssen → Garmisch → Berchtesgaden</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-                                </a><a href="PlanDetails.html" className="text-indigo-600 font-semibold hover:underline">
-                                    View Plans
-                                </a>
-                            </div>
-                            <div className="tour-card">
-                                <a href="JoinTravellersGroup.html">
-                                    <img src="https://picsum.photos/id/1021/600/400" alt="Tour 2" />
-                                    <div className="info">
-                                        <h4>Bavarian Alps Adventure</h4>
-                                        <div className="meta">8 Days · Max 25 People</div>
-                                        <div className="price">From $1,870</div>
-                                    </div>
-                                    <section className="map-list-section">
-                                        <div className="map-container">
-                                            <iframe  title="goog" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3738026319794!2d144.95743221570534!3d-37.816382979751504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5772c6335123bc1!2sFederation+Square!5e0!3m2!1sen!2sau!4v1510919093301" allowFullScreen>
-                                            </iframe>
-                                        </div>
-                                        <div className="tour-list">
-                                            <ul>
-                                                <li><strong>Europe Highlights</strong><br />Berlin → Dresden → Munich → Frankfurt</li>
-                                                <li><strong>Best of Germany</strong><br />Berlin → Hamburg → Cologne → Rothenburg</li>
-                                                <li><strong>Bavarian Alps Adventure</strong><br />Munich → Füssen → Garmisch → Berchtesgaden</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-                                </a><a href="PlanDetails.html" className="text-indigo-600 font-semibold hover:underline">
-                                    View Plans
-                                </a>
-                            </div>
-                            <div className="tour-card">
-                                <a href="JoinTravellersGroup.html">
-                                    <img src="https://picsum.photos/id/1015/600/400" alt="Tour 1" />
-                                    <div className="info">
-                                        <h4>Best of Germany Tour</h4>
-                                        <div className="meta">12 Days · Max 30 People</div>
-                                        <div className="price">From $2,540</div>
-                                    </div>
-                                    <section className="map-list-section">
-                                        <div className="map-container">
-                                            <iframe  title="goog" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3738026319794!2d144.95743221570534!3d-37.816382979751504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5772c6335123bc1!2sFederation+Square!5e0!3m2!1sen!2sau!4v1510919093301" allowFullScreen>
-                                            </iframe>
-                                        </div>
-                                        <div className="tour-list">
-                                            <ul>
-                                                <li><strong>Europe Highlights</strong><br />Berlin → Dresden → Munich → Frankfurt</li>
-                                                <li><strong>Best of Germany</strong><br />Berlin → Hamburg → Cologne → Rothenburg</li>
-                                                <li><strong>Bavarian Alps Adventure</strong><br />Munich → Füssen → Garmisch → Berchtesgaden</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-                                </a><a href="PlanDetails.html" className="text-indigo-600 font-semibold hover:underline">
-                                    View Plans
-                                </a>
-                            </div>
-                        </div>
-                        <div className="tour-listing">
-                            <div className="tour-card">
-                                <a href="JoinTravellersGroup.html">
-                                    <img src="https://picsum.photos/id/1015/600/400" alt="Tour 1" />
-                                    <div className="info">
-                                        <h4>Best of Germany Tour</h4>
-                                        <div className="meta">12 Days · Max 30 People</div>
-                                        <div className="price">From $2,540</div>
-                                    </div>
-                                    <section className="map-list-section">
-                                        <div className="map-container">
-                                            <iframe  title="goog" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3738026319794!2d144.95743221570534!3d-37.816382979751504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5772c6335123bc1!2sFederation+Square!5e0!3m2!1sen!2sau!4v1510919093301" allowFullScreen>
-                                            </iframe>
-                                        </div>
-                                        <div className="tour-list">
-                                            <ul>
-                                                <li><strong>Europe Highlights</strong><br />Berlin → Dresden → Munich → Frankfurt</li>
-                                                <li><strong>Best of Germany</strong><br />Berlin → Hamburg → Cologne → Rothenburg</li>
-                                                <li><strong>Bavarian Alps Adventure</strong><br />Munich → Füssen → Garmisch → Berchtesgaden</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-                                </a><a href="PlanDetails.html" className="text-indigo-600 font-semibold hover:underline">
-                                    View Plans
-                                </a>
-                            </div>
-                            <div className="tour-card">
-                                <a href="JoinTravellersGroup.html">
-                                    <img src="https://picsum.photos/id/1021/600/400" alt="Tour 2" />
-                                    <div className="info">
-                                        <h4>Bavarian Alps Adventure</h4>
-                                        <div className="meta">8 Days · Max 25 People</div>
-                                        <div className="price">From $1,870</div>
-                                    </div>
-                                    <section className="map-list-section">
-                                        <div className="map-container">
-                                            <iframe  title="goog" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3738026319794!2d144.95743221570534!3d-37.816382979751504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5772c6335123bc1!2sFederation+Square!5e0!3m2!1sen!2sau!4v1510919093301" allowFullScreen>
-                                            </iframe>
-                                        </div>
-                                        <div className="tour-list">
-                                            <ul>
-                                                <li><strong>Europe Highlights</strong><br />Berlin → Dresden → Munich → Frankfurt</li>
-                                                <li><strong>Best of Germany</strong><br />Berlin → Hamburg → Cologne → Rothenburg</li>
-                                                <li><strong>Bavarian Alps Adventure</strong><br />Munich → Füssen → Garmisch → Berchtesgaden</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-                                </a><a href="PlanDetails.html" className="text-indigo-600 font-semibold hover:underline">
-                                    View Plans
-                                </a>
-                            </div>
-                            <div className="tour-card">
-                                <a href="JoinTravellersGroup.html">
-                                    <img src="https://picsum.photos/id/1015/600/400" alt="Tour 1" />
-                                    <div className="info">
-                                        <h4>Best of Germany Tour</h4>
-                                        <div className="meta">12 Days · Max 30 People</div>
-                                        <div className="price">From $2,540</div>
-                                    </div>
-                                    <section className="map-list-section">
-                                        <div className="map-container">
-                                            <iframe  title="goog" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.3738026319794!2d144.95743221570534!3d-37.816382979751504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5772c6335123bc1!2sFederation+Square!5e0!3m2!1sen!2sau!4v1510919093301" allowFullScreen>
-                                            </iframe>
-                                        </div>
-                                        <div className="tour-list">
-                                            <ul>
-                                                <li><strong>Europe Highlights</strong><br />Berlin → Dresden → Munich → Frankfurt</li>
-                                                <li><strong>Best of Germany</strong><br />Berlin → Hamburg → Cologne → Rothenburg</li>
-                                                <li><strong>Bavarian Alps Adventure</strong><br />Munich → Füssen → Garmisch → Berchtesgaden</li>
-                                            </ul>
-                                        </div>
-                                    </section>
-                                </a><a href="PlanDetails.html" className="text-indigo-600 font-semibold hover:underline">
-                                    View Plans
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    );
+// Distance calculator (Haversine formula)
+const getDistance = (lat1, lon1, lat2, lon2) => {
+  const R = 6371;
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return (R * c).toFixed(1);
 };
 
-export default DigitalNomads;
+// Animated Route
+const AnimatedRoute = ({ from, to }) => {
+  const map = useMap();
+  useEffect(() => {
+    if (!from || !to) return;
+    const antPath = new L.polyline.antPath([from, to], {
+      paused: false,
+      reverse: false,
+      delay: 400,
+      dashArray: [10, 20],
+      weight: 4,
+      color: "#00FF00",
+      pulseColor: "#FFFFFF",
+    });
+    antPath.addTo(map);
+    return () => {
+      map.removeLayer(antPath);
+    };
+  }, [from, to, map]);
+  return null;
+};
+
+const HomestayMap = () => {
+
+    //  const [checkIn, setCheckIn] = useState(null);
+      // const [checkOut, setCheckOut] = useState(null);
+      // const [priceRange, setPriceRange] = useState([50, 300]);
+      // const [guests, setGuests] = useState(2);
+    
+      // const handleSearch = () => {
+      //   console.log({
+      //     checkIn,
+      //     checkOut,
+      //     priceRange,
+      //     guests,
+      //   });
+      //   // You can call an API here
+      // };
+
+  const [homestays, setHomestays] = useState([]);
+  const [selectedRoute, setSelectedRoute] = useState(null);
+  const [selectedStay, setSelectedStay] = useState(null);
+  const [countries, setCountries] = useState([]);
+  const [selectedCountry, setSelectedCountry] = useState("All");
+  const [userLocation, setUserLocation] = useState(null);
+  const detailsRef = useRef(null);
+
+  // Load CSV
+  useEffect(() => {
+    Papa.parse(require("../../components/DigitalNomads/digital_nomad_homestays_enriched_sample.csv"), {
+      download: true,
+      header: true,
+      complete: (result) => {
+        const cleaned = result.data
+          .map((row) => ({
+            ...row,
+            latitude: parseFloat(row.latitude),
+            longitude: parseFloat(row.longitude),
+            price: row.price || "$50/nightff"+row.image,
+            images: row.image ? row.image.split(";") : [],
+          }))
+          .filter((row) => !isNaN(row.latitude) && !isNaN(row.longitude));
+
+        setHomestays(cleaned);
+
+        const uniqueCountries = [
+          "All",
+          ...Array.from(new Set(cleaned.map((row) => row.country))).sort(),
+        ];
+        setCountries(uniqueCountries);
+      },
+    });
+  }, []);
+
+  // Get user GPS location
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setUserLocation([pos.coords.latitude, pos.coords.longitude]);
+        },
+        (err) => {
+          console.error("Geolocation error:", err);
+          // fallback if denied
+          setUserLocation([28.6139, 77.209]); // New Delhi
+        }
+      );
+    } else {
+      setUserLocation([28.6139, 77.209]); // fallback
+    }
+  }, []);
+
+  const handleViewDetails = (stay) => {
+    setSelectedStay(stay);
+    if (detailsRef.current) {
+      detailsRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const filteredHomestays =
+    selectedCountry === "All"
+      ? homestays
+      : homestays.filter((stay) => stay.country === selectedCountry);
+
+  return (
+    <div
+      className="map-page"
+      style={{ display: "flex", flexDirection: "column", width: "100%" }}
+    >
+    <div className="filter-bar">
+      {/* Country Filter */}
+      <div style={{ padding: "10px", background: "#f0f0f0" }}>
+        <label style={{ marginRight: "10px", fontWeight: "bold" }}>
+          Filter by Country:
+        </label>
+        <select
+          value={selectedCountry}
+          onChange={(e) => setSelectedCountry(e.target.value)}
+          style={{
+            padding: "6px",
+            borderRadius: "6px",
+            border: "1px solid #ccc",
+          }}
+        >
+          {countries.map((country, idx) => (
+            <option key={idx} value={country}>
+              {country}
+            </option>
+          ))}
+        </select>
+      </div>
+          <div className="filter-group">
+            <label htmlFor="checkin">Check-in</label>
+            <input type="date" id="checkin" name="checkin" />
+          </div>
+          <div className="filter-group">
+            <label htmlFor="checkout">Check-out</label>
+            <input type="date" id="checkout" name="checkout" />
+          </div>
+          <div className="filter-group">
+            <label htmlFor="persons">Persons</label>
+            <select id="persons" name="persons">
+              <option value={1}>1 Person</option>
+              <option value={2}>2 Persons</option>
+              <option value={3}>3 Persons</option>
+              <option value="4+">4+ Persons</option>
+            </select>
+          </div>
+          <div className="filter-group">
+            <label>Price Range</label>
+            <div className="price-range">
+              <input type="number" placeholder="Min $" min={0} />
+              <input type="number" placeholder="Max $" min={0} />
+            </div>
+          </div>
+          <button className="filter-btn">Search</button>
+        </div>
+      
+
+      {/* Map */}
+      <MapContainer
+        center={userLocation || [20, 0]}
+        zoom={userLocation ? 5 : 2}
+        style={{ height: "60vh", width: "100%" }}
+      >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
+        {/* Show user marker */}
+        {userLocation && (
+          <Marker
+            position={userLocation}
+            icon={L.icon({
+              iconUrl:
+                "https://cdn-icons-png.flaticon.com/512/64/64113.png", // person icon
+              iconSize: [32, 32],
+            })}
+          >
+            <Popup>You are here 📍</Popup>
+          </Marker>
+        )}
+
+        {filteredHomestays.map((stay, idx) => {
+          let distance = "Detecting...";
+          if (userLocation) {
+            distance = getDistance(
+              userLocation[0],
+              userLocation[1],
+              stay.latitude,
+              stay.longitude
+            );
+          }
+          return (
+            <Marker
+              key={idx}
+              position={[stay.latitude, stay.longitude]}
+              icon={L.icon({
+                iconUrl:
+                  "https://cdn-icons-png.flaticon.com/512/684/684908.png",
+                iconSize: [32, 32],
+              })}
+              eventHandlers={{
+                click: () =>
+                  setSelectedRoute({
+                    from: userLocation,
+                    to: [stay.latitude, stay.longitude],
+                  }),
+              }}
+            >
+              <Popup maxWidth={300}>
+                <h3>{stay.name}</h3>
+                <Carousel
+                  showThumbs={false}
+                  showStatus={false}
+                  infiniteLoop
+                  autoPlay
+                  interval={3000}
+                >
+                  {stay.images.length > 0 ? (
+                    stay.images.map((img, i) => (
+                        
+                      <div key={i}>{img}
+                        <img 
+                          src={img}
+                          alt={`stay-${i}`}
+                          style={{
+                            width: "100%",
+                            height: "180px",
+                            objectFit: "cover",
+                            borderRadius: "8px",
+                          }}
+                        ></img>
+                      </div>
+                    ))
+                  ) : (
+                    // <img
+                    //   src="../assets/Destination1.png"
+                    //   alt={stay.images}
+                    // />
+                    <img src={require('../../assets/beachtrip.webp')} alt="Beach Trip" />
+                  )}
+                </Carousel>
+                <p>
+                  {stay.city}, {stay.country}
+                </p>
+                <p>
+                  <strong>Price:</strong> {stay.price}
+                </p>
+                <p>
+                  <strong>Distance from you:</strong> {distance} km
+                </p>
+                <button
+                  style={{
+                    background: "green",
+                    color: "white",
+                    padding: "8px 14px",
+                    border: "none",
+                    borderRadius: "6px",
+                    marginTop: "5px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => handleViewDetails(stay)}
+                >
+                  View More Details
+                </button>
+              </Popup>
+            </Marker>
+          );
+        })}
+
+        {selectedRoute && userLocation && (
+          <AnimatedRoute from={selectedRoute.from} to={selectedRoute.to} />
+        )}
+      </MapContainer>
+
+      {/* Details Section */}
+      {selectedStay && (
+        <div
+          ref={detailsRef}
+          style={{
+            padding: "20px",
+            background: "#f9f9f9",
+            marginTop: "10px",
+          }}>
+          <h2>{selectedStay.name}</h2>
+          <Carousel showThumbs infiniteLoop autoPlay interval={4000}>
+            {selectedStay.images.length > 0 ? (
+              selectedStay.images.map((img, i) => (
+                <div key={i}>
+                  <img
+                    src={img}
+                    alt={`stay-${i}`}
+                    style={{
+                      width: "100%",
+                      height: "400px",
+                      objectFit: "cover",
+                      borderRadius: "10px",
+                    }}
+                  />
+                </div>
+              ))
+            ) : (
+            //   <img
+            //     src="https://via.placeholder.com/800x400"
+            //     alt="placeholderdd"
+            //   />
+            <img src={require('../../assets/beachtrip.webp')} alt="Beach Trip" />
+            )}
+          </Carousel>
+          <p>
+            <strong>City:</strong> {selectedStay.city}, {selectedStay.country}
+          </p>
+          <p>
+            <strong>Price:</strong> {selectedStay.price}
+          </p>
+          <p>
+            <strong>Facilities:</strong> {selectedStay.facilities}
+          </p>
+          <p>
+            <strong>Contact:</strong> {selectedStay.email || "N/A"} |{" "}
+            {selectedStay.contact || "N/A"}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default HomestayMap;
