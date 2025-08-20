@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import {useEffect,  useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -58,6 +58,14 @@ const JoinTravellersGroup = () => {
       
         const totalSeconds = dealsData.map(d => d.expiresInHours * 3600);
         const [timers, setTimers] = useState([...totalSeconds]);
+
+        useEffect(() => {
+            const timerInterval = setInterval(() => {
+              setTimers(prev => prev.map(time => (time > 0 ? time - 1 : 0)));
+            }, 1000);
+        
+            return () => clearInterval(timerInterval);
+          }, []);
 
           const formatTime = (seconds) => {
     const h = Math.floor(seconds / 3600);

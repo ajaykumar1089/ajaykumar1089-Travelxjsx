@@ -2,10 +2,10 @@
 
 import React, { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Mail, Lock, Eye, EyeOff, User, Github, Facebook, Loader2 } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff, User, Facebook, Loader2 } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 import "leaflet-ant-path";
-import { Carousel } from "react-responsive-carousel";
+
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./Login.css"
 
@@ -13,7 +13,8 @@ import "./Login.css"
 
 const Login = () => {
  
-const emailRegex = /^(?:[a-zA-Z0-9_'^&\/+{}!#%`~=*$?|-]+(?:\.[a-zA-Z0-9_'^&\/+{}!#%`~=*$?|-]+)*)@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
+const emailRegex =/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}$/i;
+// "/^(?:[a-zA-Z0-9_'^&\/+{}!#%`~=*$?|-]+(?:\.[a-zA-Z0-9_'^&\/+{}!#%`~=*$?|-]+)*)@(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/";
 
 const fieldVariants = {
   hidden: { opacity: 0, y: 10 },
