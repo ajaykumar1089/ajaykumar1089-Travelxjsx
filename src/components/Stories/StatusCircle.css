@@ -36,12 +36,13 @@
   font-weight: 700;
 }
 
+/* Story grid responsive */
 .story-grid {
-  width: 100%;
-  max-width: 920px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(86px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 1rem;
+  width: 100%;
+  max-width: 900px;
 }
 
 .story-btn {

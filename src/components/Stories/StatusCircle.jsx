@@ -15,17 +15,9 @@ const STORIES = [
       "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
     ],
   },
+ 
   {
     id: 2,
-    name: "Liam",
-    avatar: "https://images.unsplash.com/photo-1527980965255-7c6b70f1f2f1?q=80&w=400&auto=format&fit=crop",
-    items: [
-      "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1500534623283-312aade485b7?q=80&w=1200&auto=format&fit=crop",
-    ],
-  },
-  {
-    id: 3,
     name: "Mia",
     avatar: "https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?q=80&w=400&auto=format&fit=crop",
     items: [

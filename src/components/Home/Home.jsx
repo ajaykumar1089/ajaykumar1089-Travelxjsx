@@ -21,17 +21,20 @@ const Home = () => {
 
 
   const buttons = [
-    { id: 1, label: "Vehical - Rentals", icon: "fas fa-motorcycle motorcycle" },
-    { id: 2, label: "Vehical - Rentals", icon: "fas fa-car" },
+    { id: 1, label: "Bike Rentals", icon: "fas fa-motorcycle motorcycle" },
+    { id: 2, label: "Car - Rentals", icon: "fas fa-car" },
     { id: 3, label: "Campervan Rentals", icon: "fas fa-shuttle-van" },
     // { id: 3, label: "Flight", icon: "fas fa-plane" },
     //  { id: 4, label: "Cruise", icon: "fas fa-ship" },
-    { id: 4, label: "Hotels & Home Stays", icon: "fas fa-hotel" },   
-    
+    { id: 4, label: "Hotels & Home Stays", icon: "fas fa-hotel" },
+
     { id: 5, label: "Hire Trip Coach", title: "Hire Tourist Guide", icon: "fas fa-user-tie guide-icon" },
     { id: 6, label: "Tourist Map", icon: "fas fa-map-marked-alt" },//Home- Back to Home Full Travel Package
     // { id: 8, label: "Forex Exchange", icon: "fas fa-money-bill-wave" },   
-     { id: 7, label: "Full Tour Package", icon: "fas fa-travel-package" }, 
+    { id: 7, label: "Full Tour Package", icon: "fas fa-travel-package" },
+    { id: 8, label: "Tickets & Events", icon: "fa-solid fa-ticket" },
+
+
   ];
 
   const dealsData = [
@@ -143,18 +146,18 @@ const Home = () => {
           </div>
         </div>
         <div>
-          <div style={{ textAlign: "center", padding: "25px" }}>
+          <div style={{ textAlign: "center", padding: "5px" }}>
             <TravelDealsButton />
           </div>
 
           {/* <div id="deals-section" style={{ padding: "50px", background: "#fff" }}>
-              <h2>Today's Best Travel Deals</h2>
-              <ul>
-                <li>🏖️ Bali Getaway – $499</li>
-                <li>🏔️ Swiss Alps Adventure – $899</li>
-                <li>🏝️ Maldives Resort – $1,299</li>
-              </ul>
-            </div> */}
+                <h2>Today's Best Travel Deals</h2>
+                <ul>
+                  <li>🏖️ Bali Getaway – $499</li>
+                  <li>🏔️ Swiss Alps Adventure – $899</li>
+                  <li>🏝️ Maldives Resort – $1,299</li>
+                </ul>
+              </div> */}
 
           <div id="deals-section" className="best-deals-container">
             <h2>Today's Best Travel Deals</h2>
