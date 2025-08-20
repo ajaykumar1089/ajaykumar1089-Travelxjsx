@@ -13,10 +13,11 @@
 :root{
   --slate-50:#f8fafc; --slate-100:#f1f5f9; --slate-200:#e2e8f0; --slate-300:#cbd5e1;
   --slate-400:#94a3b8; --slate-500:#64748b; --slate-600:#475569; --slate-700:#334155;
-  --slate-800:#1f2937; --slate-900:#0f172a; --slate-950:#f4f5f8;
+  --slate-800:#1f2937; --slate-900:#0f172a; --slate-950:#020617;
 
   --indigo-500:#6366f1; --sky-500:#0ea5e9; --cyan-400:#22d3ee;
   --fuchsia-500:#d946ef; --rose-500:#f43f5e; --orange-400:#fb923c;
+  --green-500:#22c55e; --green-600:#16a34a;
   --white: #ffffff; --black:#000000;
 }
 
@@ -53,9 +54,9 @@ button,input{font:inherit;color:inherit}
 .bg-slate-900\/70{background:rgba(15,23,42,.7)}
 .bg-slate-800\/70{background:rgba(31,41,55,.7)}
 .bg-slate-950{background:var(--slate-950)}
-.bg-green\/5{background:rgba(9, 170, 17, 0.05)}
-.bg-green\/10{background:rgba(15, 146, 11, 0.1)}
-.bg-green\/80{background:rgba(22, 104, 39, 0.8)}
+.bg-white\/5{background:rgba(255,255,255,.05)}
+.bg-white\/10{background:rgba(255,255,255,.1)}
+.bg-white\/80{background:rgba(255,255,255,.8)}
 .bg-gradient-to-r{background-image:linear-gradient(to right, var(--grad-from), var(--grad-to))}
 .bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--grad-from), var(--grad-mid), var(--grad-to))}
 .bg-gradient-to-tr{background-image:linear-gradient(to top right, var(--grad-from), var(--grad-mid), var(--grad-to))}
@@ -127,7 +128,7 @@ input[type="checkbox"]{
 input[type="checkbox"]:checked{background:rgba(255,255,255,.8);border-color:rgba(255,255,255,1)}
 
 /* buttons */
-.btn-primary{background-image:linear-gradient(to right, rgba(255,255,255,.9), #fff);color:var(--slate-900)}
+.btn-primary{background:linear-gradient(to right, var(--green-500), var(--green-600));color:#fff}
 .btn{width:100%;display:inline-flex;align-items:center;justify-content:center;gap:.5rem;border:0;border-radius:12px;font-weight:500;padding:.75rem 1rem}
 .btn-outline{border:1px solid rgba(255,255,255,.1);background:transparent;border-radius:12px;padding:.75rem 1rem}
 
