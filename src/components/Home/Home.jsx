@@ -32,8 +32,8 @@ const Home = () => {
     { id: 6, label: "Tourist Map", icon: "fas fa-map-marked-alt" },//Home- Back to Home Full Travel Package
     // { id: 8, label: "Forex Exchange", icon: "fas fa-money-bill-wave" },   
     { id: 7, label: "Full Tour Package", icon: "fas fa-travel-package" },
-    { id: 8, label: "Pilgrimage Tour Package", icon: "fa-solid fa-ticket" },
-    { id: 8, label: "Tickets & Events", icon: "fa-solid fa-ticket" },
+    { id: 8, label: "Spiritual Tour Package", icon: "fas fa-gopuram" },
+    { id: 9, label: "Tickets & Events", icon: "fa-solid fa-ticket" },
 
 
   ];
@@ -115,6 +115,7 @@ const Home = () => {
               <i className={`${btn.icon} campervan-icon`} />
               {btn.label}
             </button>
+            
           ))}
         </div>
         <div className="booking-form">
@@ -139,12 +140,7 @@ const Home = () => {
               <label for="return">Return Date</label>
               <input type="date" id="return" name="return" />
             </div>
-            <div className="form-group" id="returnDateGroup">
-              <div class="pilgrimage">
-                <i class="fas fa-person-walking pilgrim-walk"></i>
-                <i class="fas fa-route fa-beat"></i>
-                <i class="fas fa-mosque fa-fade"></i>
-              </div></div>
+            
 
             <div className="form-group">
               <label for="travellers">Travellers</label>

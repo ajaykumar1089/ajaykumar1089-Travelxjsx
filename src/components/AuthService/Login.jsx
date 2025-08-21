@@ -98,7 +98,7 @@ const [mode, setMode] = useState("login"); // 'login' | 'signup'
       <div>
         <div className="travel-icon-buttons-container"> 
         
-  <div className="min-h-screen w-full bg-slate-950 text-white flex items-center justify-center p-4 relative overflow-hidden">
+  <div className="min-h-screen w-full bg-slate-800 text-white flex items-center justify-center p-4 relative overflow-hidden">
       {/* Floating gradient blobs */}
       <motion.div
         aria-hidden
@@ -127,7 +127,7 @@ const [mode, setMode] = useState("login"); // 'login' | 'signup'
             </div>
             <button
               onClick={() => setMode((m) => (m === "login" ? "signup" : "login"))}
-              className="shrink-0 inline-flex items-center gap-2 rounded-full border border-#1976D2/10 px-3 py-2 text-sm hover:bg-green/5 transition"
+              className="shrink-0 inline-flex items-center gap-2 rounded-full border border-#1976D2/10 px-3 py-2 text-sm text-slate-900"
             >
               <span>{mode === "login" ? "Sign up" : "Log in"}</span>
             </button>
@@ -183,7 +183,7 @@ const [mode, setMode] = useState("login"); // 'login' | 'signup'
                 <input type="checkbox" className="appearance-none h-4 w-4 rounded border border-white/20 bg-slate-800 checked:bg-white/80 checked:border-white transition" />
                 <span className="text-slate-300">Remember me</span>
               </label>
-              <button type="button" className="text-sky-300 hover:text-sky-200">
+              <button type="button" className="text-sm text-slate-900">
                 Forgot password?
               </button>
             </div>
