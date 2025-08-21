@@ -26,7 +26,7 @@ function Footer() {
           {/* Contact Info */}
           <div style={{flex: 1, minWidth: '200px'}}>
             <h3 style={{color: 'white'}}>Contact</h3>
-            <p>Email: support@travellerclicks.com</p>
+            <p>Email: services@travellerclicks.com</p>
             <p>Phone: +91-9942520866</p>
             <p>Location: Ranchi, Jharkhand, India</p>
           </div>
